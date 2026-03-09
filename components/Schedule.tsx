@@ -20,9 +20,12 @@ interface Slot {
   status?: string;
 }
 
-function daysUntilNextSunday(): number {
-  const dow = new Date().getDay();
-  return dow === 0 ? 14 : (7 - dow) + 7;
+// 今週の日曜日を取得（todayが日曜なら今日自身）
+function getThisSunday(today: Date): Date {
+  const sun = new Date(today);
+  const dow = sun.getDay(); // 0=日
+  sun.setDate(sun.getDate() + (dow === 0 ? 0 : 7 - dow));
+  return sun;
 }
 
 export default function Schedule() {
@@ -77,11 +80,19 @@ export default function Schedule() {
   }).filter(({ dateObj }) => dateObj >= today);
 
   const visibleDates = useMemo(() => {
-    const start = new Date(today);
-    start.setDate(start.getDate() + weekOffset * 7);
-    const end = new Date(weekOffset === 0 ? today : start);
-    end.setDate(end.getDate() + (weekOffset === 0 ? daysUntilNextSunday() : 7));
-    return allDates.filter(({ dateObj }) => dateObj >= (weekOffset === 0 ? today : start) && dateObj <= end);
+    if (weekOffset === 0) {
+      // 今週: 今日〜今週の日曜日
+      const end = getThisSunday(today);
+      return allDates.filter(({ dateObj }) => dateObj >= today && dateObj <= end);
+    } else {
+      // N週目: その週の月曜〜日曜（7日間）
+      const thisSunday = getThisSunday(today);
+      const start = new Date(thisSunday);
+      start.setDate(start.getDate() + 1 + (weekOffset - 1) * 7); // 翌週月曜 + offset
+      const end = new Date(start);
+      end.setDate(end.getDate() + 6); // 日曜
+      return allDates.filter(({ dateObj }) => dateObj >= start && dateObj <= end);
+    }
   }, [weekOffset, allDates]);
 
   const canPrev = weekOffset > 0;

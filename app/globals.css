@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-white: #ffffff;
+  --color-off-white: #f7f7f5;
+  --color-light-gray: #ebebeb;
+  --color-mid-gray: #888888;
+  --color-dark: #111111;
+  --color-black: #050505;
+  --color-blue: #1246d6;
+  --color-blue-light: #e6edff;
+}
+
+/* ── ベースリセット ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--color-white);
+  color: var(--color-black);
+  overflow-x: hidden;
+  font-weight: 300;
+}
+
+/* ── キャッチコピー青アンダーライン ── */
+.catch-line {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 4px;
+}
+.catch-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-blue);
+}
+
+/* ── タイムライン フェードインアニメーション ── */
+.tl-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.tl-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── ステータス点滅 ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+.status-dot {
+  animation: pulse 2s infinite;
+}
+
+/* ── スライダー ── */
+.slider-img {
+  transition: opacity 1s ease;
+}

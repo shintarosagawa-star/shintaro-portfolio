@@ -117,8 +117,8 @@ export default function Soccer() {
       </div>
 
       {/* YouTube */}
-      <div className="mt-12">
-        <div className="relative w-full max-w-2xl" style={{ paddingBottom: "min(56.25%, 360px)" }}>
+      <div className="mt-12 max-w-2xl">
+        <div className="relative w-full aspect-video">
           <iframe
             className="absolute top-0 left-0 w-full h-full rounded"
             src="https://www.youtube.com/embed/TWEd1tDc5P8"

@@ -53,9 +53,7 @@ export default function Nav() {
         ))}
         <li>
           <a
-            href="https://works.do/xu7BAGz"
-            target="_blank"
-            rel="noopener"
+            href="#contact"
             className="text-[11px] font-bold tracking-[2.5px] uppercase no-underline px-6 py-2.5 bg-[--color-blue] text-white rounded-sm hover:opacity-85 transition-opacity"
           >
             Contact
@@ -80,9 +78,7 @@ export default function Nav() {
             ))}
             <li>
               <a
-                href="https://works.do/xu7BAGz"
-                target="_blank"
-                rel="noopener"
+                href="#contact"
                 onClick={() => setOpen(false)}
                 className="inline-block text-sm font-bold tracking-[2px] uppercase no-underline px-6 py-2.5 bg-[--color-blue] text-white"
               >

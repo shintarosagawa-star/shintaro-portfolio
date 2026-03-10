@@ -37,15 +37,6 @@ export default function Home() {
           >
             Instagram
           </a>
-          {/* LINE WORKS */}
-          <a
-            href="https://works.do/xu7BAGz"
-            target="_blank"
-            rel="noopener"
-            className="text-sm text-white/50 no-underline hover:text-white transition-colors"
-          >
-            LINE
-          </a>
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center gap-2.5">
           <div className="font-['Bebas_Neue'] text-base tracking-[4px] text-white">

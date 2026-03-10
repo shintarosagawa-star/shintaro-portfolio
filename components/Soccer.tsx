@@ -116,6 +116,19 @@ export default function Soccer() {
         ))}
       </div>
 
+      {/* YouTube */}
+      <div className="mt-12">
+        <div className="relative w-full max-w-2xl" style={{ paddingBottom: "min(56.25%, 360px)" }}>
+          <iframe
+            className="absolute top-0 left-0 w-full h-full rounded"
+            src="https://www.youtube.com/embed/TWEd1tDc5P8"
+            title="YouTube"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+
       {/* ギャラリー写真 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
         <div className="relative aspect-[4/3] overflow-hidden">

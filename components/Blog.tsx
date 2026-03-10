@@ -18,6 +18,18 @@ export default async function Blog() {
         思考の記録。
       </h2>
 
+      {/* note リンク */}
+      <div className="mb-12">
+        <a
+          href="https://note.com/brainy_gnu10"
+          target="_blank"
+          rel="noopener"
+          className="inline-flex items-center gap-3.5 px-8 py-4 border-[1.5px] border-[--color-blue] text-[--color-blue] text-xs font-bold tracking-[2.5px] uppercase no-underline rounded-sm transition-all hover:bg-[--color-blue] hover:text-white hover:-translate-y-[2px]"
+        >
+          note で読む →
+        </a>
+      </div>
+
       {posts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {posts.map((post) => (

@@ -58,13 +58,7 @@ export default async function Blog() {
             </div>
           ))}
         </div>
-      ) : (
-        <div className="text-center py-20">
-          <p className="text-[--color-mid-gray] text-sm font-light">
-            準備中です。近日公開予定。
-          </p>
-        </div>
-      )}
+      ) : null}
     </section>
   );
 }

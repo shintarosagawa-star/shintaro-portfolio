@@ -5,6 +5,7 @@ import Soccer from "@/components/Soccer";
 import Business from "@/components/Business";
 import Story from "@/components/Story";
 import Now from "@/components/Now";
+import Services from "@/components/Services";
 import Blog from "@/components/Blog";
 import Schedule from "@/components/Schedule";
 import Contact from "@/components/Contact";
@@ -21,6 +22,7 @@ export default function Home() {
       <Business />
       <Story />
       <Now />
+      <Services />
       <Blog />
       <Schedule />
       <Contact />
